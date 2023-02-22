@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="data">Escribe un numero</label>
+    <input type="number" id="data">
+    <br>
+    <button type="button" onclick="buscar()">buscar numero</button>
+
+    <p id="abc"></p>
+
+    <script>
+        var arreglo = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
+        'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 
+        'W', 'X', 'Y', 'Z'];
+        function buscar() {
+            var buscar=document.getElementById("data").value;
+
+            for(var i=0;i<=buscar;i++){
+                if (i>=arreglo.length) {
+                    i=0;
+                    buscar -= (arreglo.length);
+                } else {
+                    document.getElementById("abc").innerHTML=arreglo[buscar];
+                }
+                if (buscar==27) {
+                    document.getElementById("abc").innerHTML=arreglo[0];
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>
